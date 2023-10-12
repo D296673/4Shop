@@ -13,6 +13,16 @@
 			<input type="text" id="title" name="title" class="form-control" value="{{ old('title') }}">
 		</div>
 		<div class="form-group">
+			<label for="category">catogorie</label>
+			<div class="input-group mb-2">
+				<select name="category" id="category" class="form-control">
+					@foreach($categories as $category)
+						<option  value="{{ $category->id }}">{{$category->name}}</option>
+					@endforeach
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
 			<label for="price">Prijs</label>
 			<div class="input-group mb-2">
 		        <div class="input-group-prepend">
@@ -21,6 +31,7 @@
 				<input type="number" min="0" id="price" name="price" class="form-control" value="{{ old('price') }}">
 			</div>
 		</div>
+		
 		<div class="form-group my-4">
 			<div class="form-check form-check-inline">
 				<input class="form-check-input" type="radio" name="active" id="active1" value="1">
